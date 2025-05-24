@@ -194,12 +194,25 @@
             background: #ccc;
             margin-top: 10px;
         }
-	th:nth-child(3), td:nth-child(3) {
-	    width: 30%;
-	}
-	th:nth-child(4), td:nth-child(4) {
-	    width: 20%;
-	}
+		
+		.form-container select {
+		    width: 100%;
+		    box-sizing: border-box;
+		    margin: 5px 0;
+		    padding: 8px;
+		    border-radius: 5px;
+		    border: 1px solid #ddd;
+		}
+
+		
+		/* 调整列宽：po名宽一点，代理/必入窄一点 */
+		th:nth-child(3), td:nth-child(3) {
+		    width: 30%;
+		}
+		th:nth-child(4), td:nth-child(4) {
+		    width: 20%;
+		}
+
     </style>
 </head>
 <body>
@@ -225,7 +238,11 @@
             <input type="text" id="name" placeholder="署名">
             <input type="text" id="tlgid" placeholder="TlgID (@username)">
             <input type="text" id="po" placeholder="po名">
-            <input type="text" id="button" placeholder="代理/必入">
+            <select id="button">
+			    <option value="">代理/必入</option>
+			    <option value="代理">代理</option>
+			    <option value="必入">必入</option>
+			</select>
             <input type="date" id="date" placeholder="入会时间">
             <button id="submitForm">提交</button>
             <button class="close-btn" onclick="closeForm()">关闭</button>
